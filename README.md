@@ -11,7 +11,6 @@ This repository contains a microservices-based e-commerce platform built with Ja
 - [Getting Started](#getting-started)
 - [Configuration](#configuration)
 - [Running the Services](#running-the-services)
-- [Testing](#testing)
 - [License](#license)
 
 ## Architecture
@@ -25,6 +24,8 @@ The platform follows a microservices architecture, where each service is respons
 - **Config Server**: Centralized configuration management.
 - **Eureka Discovery Server**: Service discovery for dynamic load balancing and failover.
 - **Mail Service**: Sends transactional emails using Maildev.
+- **Keycloak**: Identity and access management.
+- **Zipkin**: Distributed tracing for microservices.
 
 ## Microservices
 
@@ -56,6 +57,14 @@ The platform follows a microservices architecture, where each service is respons
 - **Description**: Sends transactional emails using Maildev.
 - **Database**: N/A
 
+### Zipkin
+- **Description**: Provides distributed tracing for microservices.
+- **Database**: N/A
+
+### Keycloak
+- **Description**: Provides identity and access management.
+- **Database**: N/A
+
 ## Tech Stack
 
 - **Java 17**
@@ -68,6 +77,8 @@ The platform follows a microservices architecture, where each service is respons
 - **Spring Mail**
 - **Thymeleaf**
 - **Maildev**
+- **Keycloak**
+- **Zipkin**
 - **Docker**
 - **Maven**
 
@@ -90,7 +101,7 @@ cd e-commerce-microservices
 Configure the application properties for each service as needed.
 
 ### Running the Services
-Use Docker Compose to start all the services and their dependencies:
+Use Docker Compose to start all the services and their dependencies, The `docker-compose.yml` file is used to set up the necessary infrastructure for the microservices, including databases, Kafka, Zookeeper, Maildev, Keycloak, and Zipkin.
 ```bash
 docker compose up -d
 ```
@@ -104,6 +115,8 @@ This command will start the following containers:
 - **Zookeeper**
 - **PgAdmin**
 - **Mongo Express**
+- **Keycloak**
+- **Zipkin**
 
 ### Accessing the Services
 - **Eureka Dashboard: `http://localhost:8761`**
@@ -111,6 +124,8 @@ This command will start the following containers:
 - **Maildev UI: `http://localhost:1080`**
 - **PgAdmin: `http://localhost:5050`**
 - **Mongo Express: `http://localhost:8081`**
+- **Keycloak: `http://localhost:9098`**
+- **Zipkin: `http://localhost:9411`**
 
 ## License
 ### This project is licensed under the MIT License. See the LICENSE file for details.
